@@ -1,0 +1,45 @@
+const express = require('express');
+
+const app = express();
+app.use(express.json());
+
+let employees = [
+    // {
+    //     fname:  "fname",
+    //     lname:  "lanme",
+    //     id:     "ball081",
+    //     pos:    "หัวหน้า",
+    //     tel:    "1150",
+    //     email:  "balluoa081@gmail.com"
+    // }
+]
+
+app.get('/getEmpoyee', (reg, res)=>{
+    res.status(200).json({
+        data: employees
+    })
+})
+
+app.post('/getEmpoyee', (reg, res)=>{
+
+    const newData =  {
+        fname:  "fname",
+        lname:  "lanme",
+        id:     "ball081",
+        pos:    "หัวหน้า",
+        tel:    "1150",
+        email:  "balluoa081@gmail.com"
+    }
+
+    res.status(200).json({
+        data: employees
+    })
+})
+
+
+
+
+
+app.listen(3000 , () => {
+    console.log('Listening on port: 3000');
+});
